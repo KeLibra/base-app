@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lib_rl_header_with_bar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x88"
+    android:background="#fff">
+
+    <ImageView
+        android:id="@+id/fm_img_back"
+        android:layout_width="@dimen/x88"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:padding="@dimen/x2"
+        android:scaleType="centerInside"
+        android:src="@drawable/lib_icon_arrow_left" />
+
+    <TextView
+        android:id="@+id/lib_tv_header_title"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/x96"
+        android:layout_marginRight="@dimen/x96"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="#222222"
+        android:textSize="17sp"
+        tools:text="标题" />
+
+    <LinearLayout
+        android:id="@+id/ll_right_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/fm_img_right"
+            android:layout_width="@dimen/x88"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x16"
+            android:padding="@dimen/x2"
+            android:scaleType="centerInside"
+            android:src="@drawable/lib_icon_share"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_right_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/x32"
+            android:textColor="#FF222222"
+            android:textSize="@dimen/x28"
+            android:visibility="gone"
+            tools:text="副标题"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/fm_view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"
+        android:background="#ddd" />
+</RelativeLayout>

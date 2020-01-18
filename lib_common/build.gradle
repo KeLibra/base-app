@@ -1,0 +1,89 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.versions.compileSdkVersion
+    buildToolsVersion rootProject.ext.versions.buildToolsVersion
+
+
+    defaultConfig {
+
+        versionCode rootProject.ext.comlibsinfo.libs_versionCode
+        versionName rootProject.ext.comlibsinfo.libs_versionName
+
+        minSdkVersion rootProject.ext.versions.minSdkVersion
+        targetSdkVersion rootProject.ext.versions.targetSdkVersion
+        multiDexEnabled true
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+
+    api(rootProject.ext.libs.converter_gson) {
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+    }
+
+    api 'androidx.core:core-ktx:1.1.0'
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+
+    api(rootProject.ext.libs.retrofit) {
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+    }
+
+    api(rootProject.ext.libs.okhttp_log_interceptor) {
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+    }
+
+    api(rootProject.ext.libs.okhttp)
+
+    api rootProject.ext.libs.lottie
+
+    //事件总线
+    api rootProject.ext.libs.eventbus
+
+    // 图片加载
+    api rootProject.ext.libs.glide
+
+    // recycle
+    api rootProject.ext.libs.recyclerview_v7
+    // design
+    api rootProject.ext.libs.design
+    // cardview
+    api rootProject.ext.libs.cardview_v7
+    // vlayout
+    api (rootProject.ext.libs.vlayout) {
+        transitive = true
+    }
+}
+repositories {
+    mavenCentral()
+}
