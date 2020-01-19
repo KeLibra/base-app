@@ -10,7 +10,6 @@ import java.lang.reflect.Type;
 import java.nio.charset.Charset;
 
 import cn.kezy.libs.common.utils.LogUtils;
-import cn.pingan.claim.app.base.common.net.bean.BaseRequest;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
@@ -88,11 +87,13 @@ public class Base64GsonConvertFactory extends Converter.Factory {
 
         @Override
         public RequestBody convert(T value) throws IOException {
-            BaseRequest<T> request = new BaseRequest<>(value);
-            String requestStr = gson.toJson(request);
+//            BaseRequest<T> request = new BaseRequest<>(value);
+//            String requestStr = gson.toJson(request);
+//
+//            LogUtils.d("====gson_request", requestStr);
+            LogUtils.d("====gson_request", gson.toJson(value));
 
-            LogUtils.d("====gson_request", requestStr);
-            return RequestBody.create(MEDIA_TYPE, requestStr);
+            return RequestBody.create(MEDIA_TYPE, gson.toJson(value));
         }
     }
 }

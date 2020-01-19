@@ -2,6 +2,7 @@ package cn.pingan.claim.app.base.common.net;
 
 import android.annotation.TargetApi;
 import android.os.Build;
+import android.text.TextUtils;
 
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
@@ -29,6 +30,22 @@ public class ServiceFactory {
     @TargetApi(Build.VERSION_CODES.KITKAT)
     public static <S> S createService(Class<S> serviceClass) {
         String baseUrl = UrlConfig.BaseUrl;
+
+        return build(baseUrl).build().create(serviceClass);
+    }
+
+    /**
+     * 需要实现retrofit的接口  必须含有BASE_URL 注解
+     *
+     * @param serviceClass
+     * @param <S>
+     * @return
+     */
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    public static <S> S createService(Class<S> serviceClass, String baseUrl) {
+        if (TextUtils.isEmpty(baseUrl)) {
+            baseUrl = UrlConfig.BaseUrl;
+        }
 
         return build(baseUrl).build().create(serviceClass);
     }

@@ -3,13 +3,13 @@ package cn.kezy.libs.common.config.userinfo;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.StringDef;
+
 import java.lang.annotation.Retention;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import androidx.annotation.StringDef;
 
 import static java.lang.annotation.RetentionPolicy.SOURCE;
 
@@ -22,11 +22,11 @@ public class LoginFacade {
 
     private static Map<String, ILogin> sLoginImlMap = new HashMap<>();
     private static List<LoginListener> sListeners = new ArrayList<>();
-    public static final String LOANMARKET_LOGIN = "vast_sky_shop";
+    public static final String CLAIM_LOGIN = "claim_pingan_login";
 
     @Retention(SOURCE)
     @StringDef({
-            LOANMARKET_LOGIN
+            CLAIM_LOGIN
     })
 
     public @interface LOGIN_TYPE {
@@ -41,7 +41,7 @@ public class LoginFacade {
         if (sLoginImlMap.isEmpty()) {
             throw new RuntimeException("you must call addLoginImpl!!");
         }
-        ILogin login = sLoginImlMap.get(LOANMARKET_LOGIN);
+        ILogin login = sLoginImlMap.get(CLAIM_LOGIN);
         if (login != null) {
             return login;
         } else {

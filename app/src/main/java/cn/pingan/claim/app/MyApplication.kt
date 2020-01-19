@@ -1,6 +1,8 @@
 package cn.pingan.claim.app
 import androidx.multidex.MultiDexApplication
 import cn.kezy.libs.common.config.AppConfigLib
+import cn.kezy.libs.common.config.userinfo.LoginFacade
+import cn.pingan.claim.app.impl.ClaimLoginImpl
 
 
 /**
@@ -26,7 +28,7 @@ class MyApplication : MultiDexApplication() {
     }
 
     private fun initPageRouter() {
-
+        LoginFacade.addLoginImpl(LoginFacade.CLAIM_LOGIN, ClaimLoginImpl(this))
     }
 
     private fun initNetWorkEnv() {
