@@ -398,7 +398,9 @@ public abstract class Jzvd extends FrameLayout implements View.OnClickListener, 
     }
 
     public void onStatePause() {
-        mediaInterface.pause();
+        if (mediaInterface != null) {
+            mediaInterface.pause();
+        }
         Log.i(TAG, "onStatePause " + " [" + this.hashCode() + "] ");
         state = STATE_PAUSE;
         startProgressTimer();
@@ -919,7 +921,6 @@ public abstract class Jzvd extends FrameLayout implements View.OnClickListener, 
             }
         }
     };
-
 
 
     public static void goOnPlayOnResume() {

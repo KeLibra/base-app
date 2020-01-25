@@ -4,7 +4,6 @@ import cn.pingan.claim.app.model.request.DeviceInfoRequest;
 import cn.pingan.claim.app.model.response.CameraBaseResponse;
 import cn.pingan.claim.app.model.response.CameraProjectInfoResponse;
 import cn.pingan.claim.app.model.response.CameraProjectListResponse;
-import cn.pingan.claim.app.model.response.DeviceInfoResponse;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
@@ -22,7 +21,7 @@ public interface CameraDeviceService {
      * 1 获取设备信息
      */
     @POST("/app/deviceinfo")
-    Call<DeviceInfoResponse> getDeviceInfo(@Body DeviceInfoRequest request);
+    Call<String> getDeviceInfo(@Body DeviceInfoRequest request);
 
     /**
      * 2 创建新项目通知

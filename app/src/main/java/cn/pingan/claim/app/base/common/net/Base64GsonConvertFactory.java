@@ -71,7 +71,9 @@ public class Base64GsonConvertFactory extends Converter.Factory {
 //			byte[] bytes = Base64.decode(value.bytes(), Base64.DEFAULT);
 //			value.close();
             String json = new String(value.bytes());
-            return adapter.fromJson(json);
+            LogUtils.d("-------msg: ResponseBody value : " + json);
+//            return adapter.fromJson(json);
+            return (T) json;
         }
     }
 

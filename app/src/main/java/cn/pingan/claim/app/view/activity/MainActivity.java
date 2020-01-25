@@ -15,6 +15,7 @@ import cn.jzvd.view.MyJzvdStd;
 import cn.pingan.claim.app.R;
 import cn.pingan.claim.app.base.common.net.ICallBack;
 import cn.pingan.claim.app.model.bean.InitConfigResponse;
+import cn.pingan.claim.app.service.CameraDeviceModel;
 import cn.pingan.claim.app.service.TestModel;
 
 public class MainActivity extends AppCompatActivity {
@@ -71,10 +72,13 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void getData2() {
-        TestModel.getInitConfig2(new ICallBack<InitConfigResponse>() {
+
+//        UrlConfig.CameraUrl = "";
+
+        CameraDeviceModel.getDeviceInfo(new ICallBack<String>() {
             @Override
-            public void onSuccess(InitConfigResponse initConfigResponse) {
-                msg.setText("2222 : " + initConfigResponse.toString());
+            public void onSuccess(String deviceInfoResponse) {
+                msg.setText("2222 : " + deviceInfoResponse.toString());
                 msg.setTextColor(Color.BLACK);
             }
 

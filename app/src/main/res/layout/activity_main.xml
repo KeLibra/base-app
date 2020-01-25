@@ -8,9 +8,9 @@
     tools:context=".view.activity.MainActivity">
 
     <LinearLayout
-        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp">
+        android:layout_height="200dp"
+        android:layout_marginBottom="20dp">
 
         <cn.jzvd.view.MyJzvdStd
             android:id="@+id/jz_video"
@@ -18,6 +18,11 @@
             android:layout_height="200dp" />
     </LinearLayout>
 
+    <EditText
+        android:id="@+id/et_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="输入IP地址和端口号：例如： 192.168.1.108:8080" />
 
     <Button
         android:id="@+id/btn1"
@@ -26,7 +31,8 @@
         android:layout_gravity="center_horizontal"
         android:padding="20dp"
         android:text="拉取接口"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/btn2"
