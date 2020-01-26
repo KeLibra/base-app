@@ -191,10 +191,10 @@ public abstract class Jzvd extends FrameLayout implements View.OnClickListener, 
                 startVideo();
             } else if (state == STATE_PLAYING) {
                 Log.d(TAG, "pauseVideo [" + this.hashCode() + "] ");
-
+                mediaInterface.pause();
                 onStatePause();
             } else if (state == STATE_PAUSE) {
-
+                mediaInterface.start();
                 onStatePlaying();
             } else if (state == STATE_AUTO_COMPLETE) {
                 startVideo();
@@ -380,7 +380,6 @@ public abstract class Jzvd extends FrameLayout implements View.OnClickListener, 
     }
 
     public void onStatePlaying() {
-        mediaInterface.start();
         Log.i(TAG, "onStatePlaying " + " [" + this.hashCode() + "] ");
         if (state == STATE_PREPARED) {//如果是准备完成视频后第一次播放，先判断是否需要跳转进度。
             if (seekToInAdvance != 0) {
@@ -398,9 +397,6 @@ public abstract class Jzvd extends FrameLayout implements View.OnClickListener, 
     }
 
     public void onStatePause() {
-        if (mediaInterface != null) {
-            mediaInterface.pause();
-        }
         Log.i(TAG, "onStatePause " + " [" + this.hashCode() + "] ");
         state = STATE_PAUSE;
         startProgressTimer();
@@ -923,13 +919,16 @@ public abstract class Jzvd extends FrameLayout implements View.OnClickListener, 
     };
 
 
+
     public static void goOnPlayOnResume() {
         if (CURRENT_JZVD != null) {
             if (CURRENT_JZVD.state == Jzvd.STATE_PAUSE) {
                 if (ON_PLAY_PAUSE_TMP_STATE == STATE_PAUSE) {
                     CURRENT_JZVD.onStatePause();
+                    CURRENT_JZVD.mediaInterface.pause();
                 } else {
                     CURRENT_JZVD.onStatePlaying();
+                    CURRENT_JZVD.mediaInterface.start();
                 }
                 ON_PLAY_PAUSE_TMP_STATE = 0;
             }
@@ -946,6 +945,7 @@ public abstract class Jzvd extends FrameLayout implements View.OnClickListener, 
             } else {
                 ON_PLAY_PAUSE_TMP_STATE = CURRENT_JZVD.state;
                 CURRENT_JZVD.onStatePause();
+                CURRENT_JZVD.mediaInterface.pause();
             }
         }
     }

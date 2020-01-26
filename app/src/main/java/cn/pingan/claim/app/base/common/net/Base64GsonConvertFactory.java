@@ -71,11 +71,28 @@ public class Base64GsonConvertFactory extends Converter.Factory {
 //			byte[] bytes = Base64.decode(value.bytes(), Base64.DEFAULT);
 //			value.close();
             String json = new String(value.bytes());
-            LogUtils.d("-------msg: ResponseBody value : " + json);
-//            return adapter.fromJson(json);
-            return (T) json;
+            LogUtils.w("-------msg: ResponseBody value : " + json);
+//            LogUtils.d("-------msg: adapter.fromJson(json) : " + adapter.fromJson(json));
+
+//            if (getJson(adapter, json)) {
+//                return (T) json;
+//            } else {
+//                return adapter.fromJson(json);
+//            }
+//            return (T) json;
+            try {
+                if (adapter.fromJson(json) instanceof String) {
+                    return (T) json;
+                } else {
+                    return adapter.fromJson(json);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                return (T) json;
+            }
         }
     }
+
 
     final static class GsonRequestBodyConverter<T> implements Converter<T, RequestBody> {
         private static final MediaType MEDIA_TYPE = MediaType.parse("application/json; charset=UTF-8");

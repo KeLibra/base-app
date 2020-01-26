@@ -7,7 +7,8 @@ package cn.pingan.claim.app.base.common.net.config;
  */
 public class UrlConfig {
     public static String BaseUrl = "https://api-mall.blshop1.com/";
-    public static String CameraUrl = "http://192.168.1.108:8080/";
+    public static String CameraUrl = "http://192.168.1.106:8080/";
+//    public static String CameraUrl = "";
 
 
 

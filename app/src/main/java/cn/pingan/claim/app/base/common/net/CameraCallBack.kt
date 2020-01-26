@@ -13,7 +13,7 @@ import retrofit2.Response
  *
  */
 
-abstract class CameraCallBack : Callback<String> {
+abstract class CameraCallBack<T> : Callback<String> {
 
     abstract fun onSuccess(t: String)
 
@@ -21,7 +21,8 @@ abstract class CameraCallBack : Callback<String> {
 
     override fun onResponse(call: Call<String>, response: Response<String>) {
 
-        if (response.isSuccessful && response.body() != null) {
+        LogUtils.e("-----Net error 111: " + response.body())
+        if (response != null && response.isSuccessful && response.body() != null) {
             onSuccess(response.body().toString())
         } else {
 

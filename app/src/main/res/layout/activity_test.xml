@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.activity.CameraTestActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_deviceinfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="设备信息" />
+
+            <Button
+                android:id="@+id/btn_newprj"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="创建项目" />
+
+            <Button
+                android:id="@+id/btn_prjs"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="项目列表" />
+
+            <Button
+                android:id="@+id/btn_prjinfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="详细信息" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_recordstate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="相机状态" />
+
+            <Button
+                android:id="@+id/btn_record"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="录像" />
+
+            <Button
+                android:id="@+id/btn_snap"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="抓拍" />
+
+            <Button
+                android:id="@+id/btn_live"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:layout_weight="1"
+                android:text="开启直播" />
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:text="请求结果" />
+    </LinearLayout>
+
+
+</androidx.core.widget.NestedScrollView>

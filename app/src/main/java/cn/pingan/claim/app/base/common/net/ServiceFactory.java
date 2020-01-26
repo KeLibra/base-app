@@ -59,9 +59,9 @@ public class ServiceFactory {
             LogInterceptor loggingInterceptor = new LogInterceptor();
 
             OkHttpClient.Builder builder = new OkHttpClient.Builder();
-            builder.readTimeout(8, TimeUnit.SECONDS);
-            builder.writeTimeout(8, TimeUnit.SECONDS);
-            builder.connectTimeout(5, TimeUnit.SECONDS);
+            builder.readTimeout(12, TimeUnit.SECONDS);
+            builder.writeTimeout(12, TimeUnit.SECONDS);
+            builder.connectTimeout(15, TimeUnit.SECONDS);
             builder.addInterceptor(loggingInterceptor);
             builder.addInterceptor(new Interceptor() {
                 @Override

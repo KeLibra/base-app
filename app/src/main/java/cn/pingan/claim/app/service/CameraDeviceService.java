@@ -1,12 +1,9 @@
 package cn.pingan.claim.app.service;
 
+import cn.pingan.claim.app.model.request.CameraBaseRequest;
 import cn.pingan.claim.app.model.request.DeviceInfoRequest;
-import cn.pingan.claim.app.model.response.CameraBaseResponse;
-import cn.pingan.claim.app.model.response.CameraProjectInfoResponse;
-import cn.pingan.claim.app.model.response.CameraProjectListResponse;
 import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.Field;
 import retrofit2.http.POST;
 
 /**
@@ -30,7 +27,7 @@ public interface CameraDeviceService {
      * PrjNo：#新建的项目编号
      */
     @POST("/app/newprj")
-    Call<CameraBaseResponse> newProject(@Field("DevSn") String DevSn, @Field("PrjNo") String PrjNo);
+    Call<String> newProject(@Body CameraBaseRequest request);
 
 
     /**
@@ -39,7 +36,7 @@ public interface CameraDeviceService {
      * DevSn： 设备序列号
      */
     @POST("/app/prjs")
-    Call<CameraProjectListResponse> getProjectList(@Field("DevSn") String DevSn);
+    Call<String> getProjectList(@Body CameraBaseRequest request);
 
     /**
      * 4 获取设备保存的某个项目详细信息
@@ -48,7 +45,7 @@ public interface CameraDeviceService {
      * PrjNo：#项目编号
      */
     @POST("/app/prjinfo")
-    Call<CameraProjectInfoResponse> getProjectInfo(@Field("DevSn") String DevSn, @Field("PrjNo") String PrjNo);
+    Call<String> getProjectInfo(@Body CameraBaseRequest request);
 
     /**
      * 5. 获取当前录像情况
@@ -57,7 +54,7 @@ public interface CameraDeviceService {
      * PrjNo：#项目编号
      */
     @POST("/app/recordstate")
-    Call<CameraBaseResponse> getCameraStatus(@Body Object o);
+    Call<String> getCameraStatus(@Body Object o);
 
 
     /**
@@ -67,7 +64,7 @@ public interface CameraDeviceService {
      * PrjNo：#项目编号
      */
     @POST("/app/record")
-    Call<CameraBaseResponse> recordCamera(@Field("DevSn") String DevSn, @Field("PrjNo") String PrjNo);
+    Call<String> recordCamera(@Body CameraBaseRequest request);
 
     /**
      * 7. 请求进行抓拍记录
@@ -76,7 +73,7 @@ public interface CameraDeviceService {
      * PrjNo：#项目编号
      */
     @POST("/app/snap")
-    Call<CameraBaseResponse> snapCamera(@Field("DevSn") String DevSn, @Field("PrjNo") String PrjNo);
+    Call<String> snapCamera(@Body CameraBaseRequest request);
 
     /**
      * 8. 开启直播
@@ -85,7 +82,7 @@ public interface CameraDeviceService {
      * PrjNo：#项目编号
      */
     @POST("/app/live")
-    Call<CameraBaseResponse> liveCamera(@Field("DevSn") String DevSn, @Field("PrjNo") String PrjNo);
+    Call<String> liveCamera(@Body CameraBaseRequest request);
 
 
 }

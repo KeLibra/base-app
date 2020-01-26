@@ -156,4 +156,17 @@ public class DeviceInfoResponse extends BaseBean {
             this.Resolution = Resolution;
         }
     }
+
+    @Override
+    public String toString() {
+        return "DeviceInfoResponse{" +
+                "DevPower='" + DevPower + '\'' +
+                ", DevSn='" + DevSn + '\'' +
+                ", DevTotalStorage='" + DevTotalStorage + '\'' +
+                ", DevUsedStorage='" + DevUsedStorage + '\'' +
+                ", DevVer='" + DevVer + '\'' +
+                ", NetInfo=" + NetInfo +
+                ", VideoInfo=" + VideoInfo +
+                '}';
+    }
 }

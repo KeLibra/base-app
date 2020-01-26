@@ -32,7 +32,7 @@
         android:padding="20dp"
         android:text="拉取接口"
         android:textSize="16sp"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
     <Button
         android:id="@+id/btn2"
@@ -41,7 +41,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_margin="20dp"
         android:padding="20dp"
-        android:text="拉取接口222"
+        android:text="跳转到测试页"
         android:textSize="16sp" />
 
 
