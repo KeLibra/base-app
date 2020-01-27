@@ -87,7 +87,6 @@ public class Base64GsonConvertFactory extends Converter.Factory {
                     return adapter.fromJson(json);
                 }
             } catch (Exception e) {
-                e.printStackTrace();
                 return (T) json;
             }
         }

@@ -21,7 +21,7 @@ abstract class CameraCallBack<T> : Callback<String> {
 
     override fun onResponse(call: Call<String>, response: Response<String>) {
 
-        LogUtils.e("-----Net error 111: " + response.body())
+        LogUtils.e("-----onResponse: " + response.body())
         if (response != null && response.isSuccessful && response.body() != null) {
             onSuccess(response.body().toString())
         } else {

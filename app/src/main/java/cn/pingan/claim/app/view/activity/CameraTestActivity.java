@@ -9,8 +9,10 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.kezy.libs.common.utils.LogUtils;
 import cn.pingan.claim.app.R;
 import cn.pingan.claim.app.base.common.net.ICallBack;
+import cn.pingan.claim.app.base.common.utils.OkHttpUtils;
 import cn.pingan.claim.app.base.view.SimpleBaseActivity;
 import cn.pingan.claim.app.model.response.CameraBaseResponse;
 import cn.pingan.claim.app.model.response.CameraProjectInfoResponse;
@@ -208,21 +210,54 @@ public class CameraTestActivity extends SimpleBaseActivity {
     }
 
     private void snap() {
-        CameraDeviceModel.snapCamera("Cam2020002", "PA111111", new ICallBack<CameraBaseResponse>() {
-            @Override
-            public void onSuccess(CameraBaseResponse deviceInfoResponse) {
-                hideLoading();
-                tvMsg.setText("record : " + deviceInfoResponse.toString());
-                tvMsg.setTextColor(Color.BLACK);
-            }
+//        CameraDeviceModel.snapCamera("Cam2020002", "PA111111", new ICallBack<CameraBaseResponse>() {
+//            @Override
+//            public void onSuccess(CameraBaseResponse deviceInfoResponse) {
+//                hideLoading();
+//                tvMsg.setText("record : " + deviceInfoResponse.toString());
+//                tvMsg.setTextColor(Color.BLACK);
+//            }
+//
+//            @Override
+//            public void onFailure(String err_msg) {
+//                hideLoading();
+//                tvMsg.setText("record 错误： " + err_msg.toString());
+//                tvMsg.setTextColor(Color.RED);
+//            }
+//        });
 
+
+        new Thread(new Runnable() {
             @Override
-            public void onFailure(String err_msg) {
+            public void run() {
                 hideLoading();
-                tvMsg.setText("record 错误： " + err_msg.toString());
-                tvMsg.setTextColor(Color.RED);
+                String response = OkHttpUtils.getInstance().doPostJson("http://192.168.1.106:8080//app/snap", "{\"DevSn\":\"Cam2020002\",\"PrjNo\": PA111111}");
+                LogUtils.e("------------------ ---------- response: " + response.toString());
             }
-        });
+        }).start();
+
+//        OkHttpClient client = new OkHttpClient();//创建OkHttpClient对象。
+//        FormBody.Builder formBody = new FormBody.Builder();//创建表单请求体
+//        formBody.add("DevSn", "Cam2020002");//传递键值对参数
+//        formBody.add("PrjNo", "PA111111");//传递键值对参数
+//        Request request = new Request.Builder()//创建Request 对象。
+//                .url("http://192.168.1.106:8080//app/snap")
+//                .post(formBody.build())//传递请求体
+//                .build();
+//        client.newCall(request).enqueue(new Callback() {
+//            @Override
+//            public void onResponse(@NotNull Call call, @NotNull Response response) throws IOException {
+//                hideLoading();
+//                LogUtils.e("------------------ ---------- response: " + response.body().toString());
+//            }
+//
+//            @Override
+//            public void onFailure(@NotNull Call call, @NotNull IOException e) {
+//                hideLoading();
+//                LogUtils.e("------------------ ---------- response: " + e.toString());
+//            }
+//        });
+
     }
 
     private void live() {

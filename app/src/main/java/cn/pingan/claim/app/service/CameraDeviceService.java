@@ -85,4 +85,14 @@ public interface CameraDeviceService {
     Call<String> liveCamera(@Body CameraBaseRequest request);
 
 
+    /**
+     * 9. 关闭直播
+     * <p>
+     * DevSn： 设备序列号
+     * PrjNo：#项目编号
+     */
+    @POST("/app/live")
+    Call<String> liveOffCamera(@Body CameraBaseRequest request);
+
+
 }

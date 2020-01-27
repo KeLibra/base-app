@@ -188,4 +188,24 @@ public class CameraDeviceModel {
                 });
     }
 
+    public static void liveOffCamera(String DevSn, String PrjNo,ICallBack<CameraBaseResponse> iCallBack) {
+        service.liveOffCamera(new CameraBaseRequest(DevSn, PrjNo))
+                .enqueue(new CameraCallBack() {
+                    @Override
+                    public void onSuccess(@NotNull String t) {
+                        if (!TextUtils.isEmpty(t)) {
+                            CameraBaseResponse response = JsonUtils.jsonStr2JsonObj(t, CameraBaseResponse.class);
+                            iCallBack.onSuccess(response);
+                        } else  {
+                            iCallBack.onFailure("");
+                        }
+                    }
+
+                    @Override
+                    public void onFail(@NotNull String code, @NotNull String errMsg) {
+                        iCallBack.onFailure(errMsg);
+                    }
+                });
+    }
+
 }
