@@ -46,7 +46,6 @@ dependencies {
 
 
     implementation project(':lib_common')
-    implementation project(':lib_video')
 
     implementation(rootProject.ext.libs.butterknife)
     annotationProcessor rootProject.ext.libs.butterknife_compiler

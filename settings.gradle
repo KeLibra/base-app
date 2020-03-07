@@ -1,2 +1,2 @@
-include ':app', ':lib_common', ':lib_video'
+include ':app', ':lib_common'
 rootProject.name='claim-android'
