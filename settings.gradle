@@ -1,2 +1,3 @@
+include ':lib_commom'
 include ':app_shop', ':lib_comlibs', ':lib_ocr', ':lib_gdlocation', ':lib_base', ':lib_paymodule'
 rootProject.name='base-app-template'

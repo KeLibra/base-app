@@ -75,10 +75,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
 
-    implementation project(':lib_comlibs')
-    implementation project(':lib_ocr') // ocr
-    implementation project(':lib_gdlocation') // 高德
-    implementation project(':lib_paymodule') // 支付宝
+    implementation project(':lib_commom')
 
     implementation(rootProject.ext.libs.butterknife)
     annotationProcessor rootProject.ext.libs.butterknife_compiler
