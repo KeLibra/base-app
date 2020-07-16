@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rl_homepager_top_title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x256"
+                android:background="@drawable/icon_homepager_top_bg"
+                android:paddingTop="@dimen/x40">
+
+                <TextView
+                    android:id="@+id/tv_homepager_title_big"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:layout_marginTop="@dimen/x32"
+                    android:text="便利分期"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_homepager_title_small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tv_homepager_title_big"
+                    android:layout_marginLeft="@dimen/x30"
+                    android:layout_marginBottom="@dimen/x2"
+                    android:layout_toRightOf="@+id/tv_homepager_title_big"
+                    android:text="甄选好分期 · 精致新生活"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@+id/coor_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/rl_homepager_top_title_layout"
+                android:layout_marginTop="-40dp"
+                android:orientation="vertical">
+
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@+id/appbar_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_homepager_item">
+
+                    <RelativeLayout
+                        android:id="@+id/rl_head_layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_scrollFlags="scroll">
+
+                        <include layout="@layout/include_layout_homepager_part_2" />
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_head_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/x100"
+                        android:gravity="center">
+
+                        <com.google.android.material.tabs.TabLayout
+                            android:id="@+id/tab_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/x100"
+                            android:paddingBottom="@dimen/x16"
+                            app:tabGravity="center"
+                            app:tabIndicator="@drawable/indicator"
+                            app:tabIndicatorColor="#24A1FF"
+                            app:tabIndicatorFullWidth="false"
+                            app:tabIndicatorGravity="bottom"
+                            app:tabMode="scrollable"
+                            app:tabSelectedTextColor="@color/color_222222"
+                            app:tabTextAppearance="@style/MyTabText"
+                            app:tabTextColor="@color/color_999999">
+
+                        </com.google.android.material.tabs.TabLayout>
+
+                    </LinearLayout>
+                </com.google.android.material.appbar.AppBarLayout>
+
+                <cn.vastsky.onlineshop.installment.common.weight.CustomViewPager
+                    android:id="@+id/cvp_viewpager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_back_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:paddingRight="@dimen/x24"
+        android:paddingBottom="@dimen/x44">
+
+        <ImageView
+            android:layout_width="@dimen/x64"
+            android:layout_height="@dimen/x64"
+            android:src="@drawable/icon_home_back_top" />
+    </RelativeLayout>
+
+</RelativeLayout>

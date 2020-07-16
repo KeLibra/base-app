@@ -1,0 +1,15 @@
+##############应用商店
+default#默认渠道
+card-oppo#oppo
+card-huawei#华为
+card-qq#应用宝
+card-vivo#vivo
+card-xiaomi#小米
+card-meizu#魅族
+card-baidu#百度助手
+card-360#360助手
+card-ali#阿里应用
+##############垂直渠道
+cz-tuijie#推借
+cz-guomei#国美
+share#分享推广

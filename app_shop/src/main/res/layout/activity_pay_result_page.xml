@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.PayResultPageActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_pay_result_icon"
+            android:layout_width="@dimen/x180"
+            android:layout_height="@dimen/x180"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x118"
+            android:background="@drawable/icon_pay_result_succ" />
+
+        <TextView
+            android:id="@+id/tv_pay_result_status_big"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/iv_pay_result_icon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x24"
+            android:text="付款处理中"
+            android:textColor="@color/color_222222"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_pay_result_status_small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_pay_result_status_big"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/x24"
+            android:text="当前网络差，正在为您处理"
+            android:textColor="@color/color_999999"
+            android:textSize="13sp" />
+
+        <ImageView
+            android:id="@+id/iv_pay_result_tips"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_below="@+id/tv_pay_result_status_small"
+            android:layout_marginLeft="@dimen/x32"
+            android:layout_marginTop="@dimen/x62"
+            android:background="@drawable/icon_pay_help" />
+
+        <TextView
+            android:id="@+id/tv_pay_result_tips"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/x40"
+            android:layout_alignTop="@+id/iv_pay_result_tips"
+            android:layout_marginLeft="@dimen/x4"
+            android:layout_toRightOf="@+id/iv_pay_result_tips"
+            android:gravity="center"
+            android:text="如何收货并使用？"
+            android:textColor="@color/color_222222"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_pay_result_tips_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_pay_result_tips"
+            android:layout_alignLeft="@+id/tv_pay_result_tips"
+            android:layout_marginLeft="@dimen/x4"
+            android:layout_marginTop="@dimen/x10"
+            android:layout_marginRight="@dimen/x80"
+            android:layout_toRightOf="@+id/tv_pay_result_tips"
+            android:gravity="center_vertical"
+            android:lineSpacingMultiplier="1.3"
+            android:paddingTop="@dimen/x4"
+            android:paddingBottom="@dimen/x4"
+            android:text="· 该商品将以电子卡券的方式为您发放;\n· 请及时查看并确认后使用。"
+            android:textColor="@color/color_999999"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_pay_result_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x92"
+            android:layout_below="@+id/tv_pay_result_tips_desc"
+            android:layout_margin="@dimen/x80"
+            android:background="@drawable/bg_payment_bottom_btn_round_x200"
+            android:gravity="center"
+            android:text="查看订单"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+</RelativeLayout>

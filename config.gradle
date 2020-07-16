@@ -16,11 +16,11 @@ ext {
 
     // app 编译版本
     versions = [
-            compileSdkVersion     : 29,
+            compileSdkVersion     : 28,
             minSdkVersion         : 18,
-            targetSdkVersion      : 29,
+            targetSdkVersion      : 28,
 
-            buildToolsVersion     : "29.0.2",
+            buildToolsVersion     : "28.0.3",
 
             retrofit_version      : "2.4.0",
             converter_gson_version: "2.4.0",

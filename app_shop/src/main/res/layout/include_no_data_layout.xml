@@ -1,0 +1,17 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_empty_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingTop="@dimen/x60"
+        android:paddingBottom="@dimen/x60"
+        android:text="甄选好分期 · 精致新生活"
+        android:textColor="#73b2b2b2"
+        android:textSize="13sp" />
+</RelativeLayout>
+

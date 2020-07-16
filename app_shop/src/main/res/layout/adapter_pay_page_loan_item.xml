@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_loan_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/view_top_line"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:layout_marginLeft="@dimen/x28"
+        android:background="@color/color_e6eef8" />
+
+    <ImageView
+        android:id="@+id/iv_loan_item_icon"
+        android:layout_width="@dimen/x48"
+        android:layout_height="@dimen/x48"
+        android:layout_marginLeft="@dimen/x28"
+        android:layout_marginTop="@dimen/x30"
+ />
+
+    <TextView
+        android:id="@+id/tv_loan_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/x48"
+        android:layout_alignTop="@+id/iv_loan_item_icon"
+        android:layout_marginLeft="@dimen/x28"
+        android:layout_toRightOf="@+id/iv_loan_item_icon"
+        android:gravity="center_vertical"
+        android:textColor="@color/color_333333"
+        android:textSize="14sp"
+        tools:text="北极分期" />
+
+    <TextView
+        android:id="@+id/tv_loan_item_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/x32"
+        android:layout_alignBottom="@+id/tv_loan_item_name"
+        android:layout_marginLeft="@dimen/x24"
+        android:layout_marginBottom="@dimen/x8"
+        android:layout_toRightOf="@+id/tv_loan_item_name"
+        android:background="@drawable/bg_round_69aeff_x16"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/x12"
+        android:paddingRight="@dimen/x12"
+        android:text="可申请"
+        android:textColor="@color/color_3c99ff"
+        android:textSize="9sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/x40"
+        android:layout_alignTop="@+id/iv_loan_item_icon"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/x28"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_loan_item_status"
+            android:layout_width="@dimen/x40"
+            android:layout_height="@dimen/x40"
+            android:layout_gravity="center"
+            android:background="@drawable/icon_pay_help"
+            />
+
+        <TextView
+            android:id="@+id/tv_loan_item_status"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/x8"
+            android:gravity="center_vertical"
+            android:textSize="14sp"
+            tools:text="已被拒" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_loan_item_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/iv_loan_item_icon"
+        android:layout_alignLeft="@+id/tv_loan_item_name"
+        android:layout_marginTop="@dimen/x16"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        tools:text="凭身份证即可申请" />
+
+    <RelativeLayout
+        android:id="@+id/rl_loan_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_loan_item_info"
+        android:layout_alignLeft="@+id/tv_loan_item_info"
+        android:paddingBottom="@dimen/x36">
+
+
+        <TextView
+            android:id="@+id/tv_loan_item_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/x20"
+            android:textColor="@color/color_c1c1c1"
+            android:textSize="12sp"
+            tools:text="期限30天  |   月息费率0.69%  |  放款时长30分钟" />
+
+        <ImageView
+            android:layout_width="@dimen/x42"
+            android:layout_height="@dimen/x42"
+            android:layout_alignTop="@+id/tv_loan_item_desc"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x28"
+            android:background="@drawable/icon_pay_right_arrow" />
+
+    </RelativeLayout>
+</RelativeLayout>

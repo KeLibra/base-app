@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activity.PaymentPageActivity">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tv_payment_btn"
+        android:layout_marginBottom="@dimen/x18">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rl_payment_info_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x280"
+                android:background="@drawable/bg_payment_top_banner">
+
+                <TextView
+                    android:id="@+id/tv_pay_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/x44"
+                    tools:text="￥1234.00"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/x36"
+                    android:layout_below="@+id/tv_pay_money"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/x22"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/iv_pay_time_icon"
+                        android:layout_width="@dimen/x28"
+                        android:layout_height="@dimen/x28"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/icon_pay_timing" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/x6"
+                        android:gravity="center_vertical"
+                        android:text="支付剩余时间: "
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tv_pay_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="@dimen/x6"
+                        android:gravity="center_vertical"
+                        android:text="00:00:00"
+                        android:textColor="@color/white"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_loan_list_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_payment_info_layout"
+                android:layout_marginTop="-46dp"
+                android:layout_marginBottom="@dimen/x20"
+                android:background="@drawable/bg_homepager_item"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_pay_title"
+                    android:layout_width="@dimen/x48"
+                    android:layout_height="@dimen/x48"
+                    android:layout_marginLeft="@dimen/x28"
+                    android:layout_marginTop="@dimen/x28"
+                    android:layout_marginRight="@dimen/x24"
+                    android:background="@drawable/icon_pay_logo_fenqi_title" />
+
+                <TextView
+                    android:id="@+id/tv_pay_fenqi_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/x48"
+                    android:layout_alignTop="@+id/iv_pay_title"
+                    android:layout_toRightOf="@+id/iv_pay_title"
+                    android:gravity="center_vertical"
+                    android:text="分期支付"
+                    android:textColor="@color/color_333333"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:id="@+id/view_line_top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/x6"
+                    android:layout_below="@+id/iv_pay_title"
+                    android:layout_alignLeft="@+id/iv_pay_title"
+                    android:layout_alignRight="@+id/tv_pay_fenqi_title"
+                    android:layout_marginTop="@dimen/x16"
+                    android:background="#f5f5f5" />
+
+                <RelativeLayout
+                    android:id="@+id/rl_payment_warn_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x58"
+                    android:layout_below="@+id/view_line_top"
+                    android:layout_marginTop="@dimen/x16"
+                    android:background="#fff4ef"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:drawableLeft="@drawable/icon_pay_oil_orange"
+                        android:gravity="center"
+                        android:text=" 暂无可申请的分期"
+                        android:textColor="@color/color_ff6f24"
+                        android:textSize="12sp" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rl_payment_warn_layout"
+                    android:background="@color/white">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rlv_loan_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_payment_wechat_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x96"
+                android:layout_below="@+id/rl_loan_list_layout"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_pay_wechat"
+                    android:layout_width="@dimen/x48"
+                    android:layout_height="@dimen/x48"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x28"
+                    android:background="@drawable/icon_pay_wechat" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x28"
+                    android:layout_toRightOf="@+id/iv_pay_wechat"
+                    android:text="微信支付"
+                    android:textColor="@color/color_333333" />
+
+                <ImageView
+                    android:id="@+id/iv_pay_wechat_status"
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/x40"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x28"
+                    android:background="@drawable/icon_pay_uncheck" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/view_line_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x1"
+                android:layout_below="@+id/rl_payment_wechat_layout"
+                android:layout_marginLeft="@dimen/x28"
+                android:background="@color/color_e6eef8" />
+
+            <RelativeLayout
+                android:id="@+id/rl_payment_alipay_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x96"
+                android:layout_below="@+id/view_line_bottom"
+                android:background="@color/white"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/iv_pay_alipay"
+                    android:layout_width="@dimen/x48"
+                    android:layout_height="@dimen/x48"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x28"
+                    android:background="@drawable/icon_pay_alipay" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/x28"
+                    android:layout_toRightOf="@+id/iv_pay_alipay"
+                    android:text="支付宝支付"
+                    android:textColor="@color/color_333333" />
+
+                <ImageView
+                    android:id="@+id/iv_pay_alipay_status"
+                    android:layout_width="@dimen/x40"
+                    android:layout_height="@dimen/x40"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/x28"
+                    android:background="@drawable/icon_pay_uncheck" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/tv_payment_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x100"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_payment_bottom_btn"
+        android:gravity="center"
+        android:text="立即申请分期"
+        android:textColor="@color/white"
+        android:textSize="16sp"></TextView>
+</RelativeLayout>

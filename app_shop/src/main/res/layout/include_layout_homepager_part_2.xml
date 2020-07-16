@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_recycleview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_homepager_top_title_layout">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycle_header_item_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/x40" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_homepager_notice"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x64"
+        android:layout_marginLeft="@dimen/x24"
+        android:layout_marginTop="@dimen/x44"
+        android:layout_marginRight="@dimen/x32"
+        android:layout_marginBottom="@dimen/x22"
+        android:background="@drawable/bg_homepager_notice"
+        android:gravity="center_vertical"
+        android:visibility="visible">
+
+        <ImageView
+            android:id="@+id/iv_notice"
+            android:layout_width="@dimen/x44"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/x12"
+            android:src="@drawable/icon_homepager_notice" />
+
+        <TextView
+            android:id="@+id/tv_notice_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/x18"
+            android:layout_toRightOf="@+id/iv_notice"
+            android:gravity="center_vertical"
+            android:paddingRight="@dimen/x18"
+            android:singleLine="true"
+            android:textColor="@color/color_666666"
+            android:textSize="13sp"
+            tools:text="这是一条通知啊通知" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_loan_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rl_homepager_notice"
+        android:layout_margin="@dimen/x24"
+        android:background="@drawable/bg_homepager_loan_ad"
+        android:padding="@dimen/x24"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_loan_icon"
+            android:layout_width="@dimen/x48"
+            android:layout_height="@dimen/x48"
+            android:layout_marginLeft="@dimen/x4"
+            android:src="@drawable/icon_homepager_loan_ad" />
+
+        <TextView
+            android:id="@+id/tv_loan_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/iv_loan_icon"
+            android:layout_marginLeft="@dimen/x18"
+            android:layout_marginBottom="@dimen/x8"
+            android:layout_toRightOf="@+id/iv_loan_icon"
+            android:textColor="@color/color_white"
+            android:textSize="14sp"
+            tools:text="便利分期" />
+
+        <TextView
+            android:id="@+id/tv_loan_money_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_loan_title"
+            android:layout_marginTop="@dimen/x12"
+            android:gravity="center_horizontal"
+            android:textColor="@color/color_white"
+            android:textSize="14sp"
+            tools:text="单笔最高额度" />
+
+        <TextView
+            android:id="@+id/tv_loan_money"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_loan_money_desc"
+            android:gravity="center_horizontal"
+            android:textColor="@color/color_ffe19a"
+            android:textSize="36sp"
+            tools:text="3,000.00" />
+
+        <TextView
+            android:id="@+id/tv_loan_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_loan_money"
+            android:layout_marginTop="@dimen/x12"
+            android:gravity="center_horizontal"
+            android:textColor="@color/color_white"
+            android:textSize="14sp"
+            tools:text="月息低至0.69% 急速审批" />
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_loan_ad_icon"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x340"
+        android:layout_below="@+id/rl_homepager_notice"
+        android:layout_margin="@dimen/x24"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/iv_ad_banner_img"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x108"
+        android:layout_below="@+id/iv_loan_ad_icon"
+        android:layout_margin="@dimen/x24"
+        android:scaleType="centerCrop"
+        android:visibility="gone" />
+
+</LinearLayout>

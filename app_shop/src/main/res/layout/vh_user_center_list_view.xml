@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_user_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/x108"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_user_mine_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/x40"
+        android:text="把app分享给好友"
+        android:textColor="@color/color_333333"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:layout_width="@dimen/x40"
+        android:layout_height="@dimen/x40"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="@dimen/x24"
+        android:background="@drawable/icon_user_right_arrow" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="@dimen/x28"
+        android:background="@color/color_e6eef8" />
+</RelativeLayout>

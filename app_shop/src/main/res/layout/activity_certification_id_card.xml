@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/ll_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tv_cert_btn"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_fafafa"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_cert_front"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x30"
+                android:layout_marginTop="@dimen/x30"
+                android:layout_marginRight="@dimen/x30"
+                android:background="@drawable/bg_round_white_x12"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/x12">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x64"
+                    android:gravity="center"
+                    android:text="第一步：请拍摄身份证正面照"
+                    android:textColor="@color/color_222222"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:id="@+id/iv_cert_front_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/x32"
+                    android:src="@drawable/icon_idcard_uncert" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/x28"
+                    android:layout_marginBottom="@dimen/x24"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="身份证完整清晰，若不完整"
+                        android:textColor="#999999"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 选择重拍"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_333333"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_cert_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x30"
+                android:layout_marginTop="@dimen/x24"
+                android:layout_marginRight="@dimen/x30"
+                android:background="@drawable/bg_round_white_x12"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/x12">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x64"
+                    android:gravity="center"
+                    android:text="第二步：请拍摄身份证反面照"
+                    android:textColor="@color/color_black"
+                    android:textSize="14sp"
+                    android:textStyle="bold"/>
+
+
+                <ImageView
+
+                    android:id="@+id/iv_cert_back_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/x32"
+                    android:src="@drawable/icon_idcard_uncert" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/x28"
+                    android:layout_marginBottom="@dimen/x24"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="身份证完整清晰，若不完整"
+                        android:textColor="#999999"
+                        android:textSize="@dimen/x24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 选择重拍"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_333333"
+                        android:textSize="@dimen/x24" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_cert_face"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x30"
+                android:layout_marginTop="@dimen/x28"
+                android:layout_marginRight="@dimen/x30"
+                android:layout_marginBottom="@dimen/x40"
+                android:background="@drawable/bg_round_white_x12"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/x12">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/x64"
+                    android:gravity="center"
+                    android:text="第三步：请根据指示完成面部动作"
+                    android:textColor="@color/color_black"
+                    android:textSize="@dimen/x28"
+                    android:textStyle="bold"/>
+
+
+                <ImageView
+                    android:id="@+id/iv_cert_face_icon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="@dimen/x32"
+                    android:src="@drawable/icon_idcard_uncert" />
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/x28"
+                    android:layout_marginBottom="@dimen/x24"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="完成身份证正反面拍摄后，"
+                        android:textColor="#999999"
+                        android:textSize="@dimen/x24" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" 开始验证"
+                        android:textStyle="bold"
+                        android:textColor="@color/color_333333"
+                        android:textSize="@dimen/x24" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/tv_cert_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x100"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_btn_ocr_bottom_selecter"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="下一步"
+        android:textColor="@color/white"
+        android:textSize="16sp" />
+</RelativeLayout>

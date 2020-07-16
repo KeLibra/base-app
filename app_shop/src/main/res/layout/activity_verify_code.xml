@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:fitsSystemWindows="true"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_msg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x110"
+        android:gravity="center"
+        android:textColor="@color/color_9b9b9b"
+        android:textSize="16sp"
+        tools:text="已向尾号8888发送短信验证码" />
+
+    <TextView
+        android:id="@+id/tv_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x28"
+        android:textColor="#FFFF563E"
+        android:textSize="@dimen/x24"
+        tools:text="* 验证码错误或已过期" />
+
+    <cn.vastsky.onlineshop.installment.common.weight.VerifyCodeEditView
+        android:id="@+id/et_verify_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/x80"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:inputType="number" />
+
+    <cn.vastsky.onlineshop.installment.common.weight.CountDownTextView
+        android:id="@+id/tv_resend_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/x32"
+        android:textSize="14sp" />
+</LinearLayout>
