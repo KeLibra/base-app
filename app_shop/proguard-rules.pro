@@ -35,7 +35,7 @@
 
 
 # 各种 bean不混淆
--keep public class * extends cn.vastsky.libs.common.base.bean.BaseBean
+-keep public class * extends cn.vastsky.lib.base.common.base.bean.BaseBean
 -keep public class cn.vastsky.onlineshop.installment.model.**{*;}
 -keep public class cn.vastsky.onlineshop.installment.router.**{*;}
 

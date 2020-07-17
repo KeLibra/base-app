@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Locale;
 
-import cn.vastsky.lib.base.utils.LogUtils;
+import cn.vastsky.lib.utils.LogUtils;
 import okhttp3.Interceptor;
 import okhttp3.MediaType;
 import okhttp3.Request;

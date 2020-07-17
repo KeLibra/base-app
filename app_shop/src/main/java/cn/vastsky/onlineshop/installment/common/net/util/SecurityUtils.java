@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import cn.vastsky.lib.base.utils.LogUtils;
+import cn.vastsky.lib.utils.LogUtils;
 
 public class SecurityUtils {
 

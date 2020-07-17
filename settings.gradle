@@ -1,3 +1,10 @@
 include ':lib_commom'
 include ':app_shop', ':lib_comlibs', ':lib_ocr', ':lib_gdlocation', ':lib_base', ':lib_paymodule'
 rootProject.name='base-app-template'
+
+
+project(':lib_base').projectDir = new File('libModule/lib_base')  // 最下层基础库
+project(':lib_comlibs').projectDir = new File('libModule/lib_comlibs') // 业务基础库
+project(':lib_gdlocation').projectDir = new File('libModule/lib_gdlocation') // 高德lib库
+project(':lib_ocr').projectDir = new File('libModule/lib_ocr') // ocr 基础库
+project(':lib_paymodule').projectDir = new File('libModule/lib_paymodule') // 支付基础库

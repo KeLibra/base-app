@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 import java.lang.ref.WeakReference;
 
 import androidx.fragment.app.FragmentActivity;
-import cn.vastsky.lib.base.utils.LogUtils;
+import cn.vastsky.lib.utils.LogUtils;
 
 import static android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP;
 

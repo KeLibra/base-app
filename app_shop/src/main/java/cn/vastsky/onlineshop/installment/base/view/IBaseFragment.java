@@ -14,10 +14,10 @@ import org.greenrobot.eventbus.EventBus;
 import org.jetbrains.annotations.NotNull;
 
 import androidx.annotation.NonNull;
-import cn.vastsky.lib.base.utils.ToastUtil;
-import cn.vastsky.lib.base.utils.LogUtils;
-import cn.vastsky.libs.common.base.CommonnBaseFragment;
-import cn.vastsky.libs.common.utils.PermissionUtils;
+import cn.vastsky.lib.utils.ToastUtil;
+import cn.vastsky.lib.utils.LogUtils;
+import cn.vastsky.lib.base.common.base.CommonnBaseFragment;
+import cn.vastsky.lib.utils.PermissionUtils;
 import cn.vastsky.onlineshop.installment.base.impl.IBasePresenter;
 import cn.vastsky.onlineshop.installment.base.impl.IBaseView;
 

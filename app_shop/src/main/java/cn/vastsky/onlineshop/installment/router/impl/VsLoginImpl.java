@@ -4,10 +4,10 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.fragment.app.FragmentActivity;
-import cn.vastsky.lib.base.store.SharedPrefStore;
-import cn.vastsky.lib.base.utils.ToastUtil;
-import cn.vastsky.libs.common.config.userinfo.LoginFacade;
-import cn.vastsky.libs.common.config.userinfo.LoginImpl;
+import cn.vastsky.lib.base.common.store.SharedPrefStore;
+import cn.vastsky.lib.utils.ToastUtil;
+import cn.vastsky.lib.base.common.config.userinfo.LoginFacade;
+import cn.vastsky.lib.base.common.config.userinfo.LoginImpl;
 import cn.vastsky.onlineshop.installment.model.UserInfo;
 
 

@@ -7,11 +7,11 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import cn.vastsky.lib.base.utils.LogUtils;
-import cn.vastsky.libs.common.router.PageRouter;
-import cn.vastsky.libs.common.utils.ViewUtils;
-import cn.vastsky.libs.common.view.base.DefaultErrorPageView;
-import cn.vastsky.libs.common.view.impl.IErrorPageView;
+import cn.vastsky.lib.utils.LogUtils;
+import cn.vastsky.lib.router.PageRouter;
+import cn.vastsky.lib.utils.ViewUtils;
+import cn.vastsky.lib.base.common.view.defaultview.DefaultErrorPageView;
+import cn.vastsky.lib.base.common.view.impl.IErrorPageView;
 
 
 /**

@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import cn.vastsky.lib.base.utils.LogUtils;
+import cn.vastsky.lib.utils.LogUtils;
 
 /**
  * @author: kezy

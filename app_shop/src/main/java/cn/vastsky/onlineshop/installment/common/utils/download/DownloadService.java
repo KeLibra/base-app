@@ -17,8 +17,8 @@ import java.io.File;
 import androidx.annotation.Nullable;
 import androidx.core.content.FileProvider;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
-import cn.vastsky.lib.base.config.AppConfigLib;
-import cn.vastsky.lib.base.utils.LogUtils;
+import cn.vastsky.lib.base.common.config.AppConfigLib;
+import cn.vastsky.lib.utils.LogUtils;
 import cn.vastsky.onlineshop.installment.R;
 
 /**

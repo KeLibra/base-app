@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
-import cn.vastsky.libs.common.utils.ViewUtils;
+import cn.vastsky.lib.utils.ViewUtils;
 import cn.vastsky.onlineshop.installment.R;
 
 

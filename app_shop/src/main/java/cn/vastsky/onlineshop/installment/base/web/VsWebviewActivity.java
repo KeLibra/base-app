@@ -15,9 +15,9 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import cn.vastsky.lib.base.utils.LogUtils;
-import cn.vastsky.libs.common.reten.ActivityConfig;
-import cn.vastsky.libs.common.utils.AppInfoUtils;
+import cn.vastsky.lib.utils.LogUtils;
+import cn.vastsky.lib.reten.ActivityConfig;
+import cn.vastsky.lib.utils.AppInfoUtils;
 import cn.vastsky.onlineshop.installment.R;
 import cn.vastsky.onlineshop.installment.base.view.SimpleBaseActivity;
 import cn.vastsky.onlineshop.installment.model.bean.event.MessageEvent;

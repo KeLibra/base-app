@@ -1,6 +1,6 @@
 package cn.vastsky.onlineshop.installment.model;
 
-import cn.vastsky.libs.common.base.bean.BaseBean;
+import cn.vastsky.lib.base.common.base.bean.BaseBean;
 
 
 /**

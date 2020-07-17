@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
-import cn.vastsky.lib.base.utils.LogUtils;
+import cn.vastsky.lib.utils.LogUtils;
 
 
 /**

@@ -3,9 +3,9 @@ package cn.vastsky.onlineshop.installment
 import android.content.pm.PackageManager
 import android.text.TextUtils
 import androidx.multidex.MultiDexApplication
-import cn.vastsky.lib.base.config.AppConfigLib
-import cn.vastsky.libs.common.config.userinfo.LoginFacade
-import cn.vastsky.libs.common.router.PageRouter
+import cn.vastsky.lib.base.common.config.AppConfigLib
+import cn.vastsky.lib.base.common.config.userinfo.LoginFacade
+import cn.vastsky.lib.router.PageRouter
 import cn.vastsky.libs.gdlocation.LocationManagerGaode
 import cn.vastsky.libs.gdlocation.config.LocationConfig
 import cn.vastsky.libs.gdlocation.manager.LocationManager

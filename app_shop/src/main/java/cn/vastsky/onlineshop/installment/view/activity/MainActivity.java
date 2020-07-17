@@ -1,7 +1,7 @@
 package cn.vastsky.onlineshop.installment.view.activity;
 
-import cn.vastsky.libs.common.base.CommonBaseActivity;
-import cn.vastsky.libs.common.reten.ActivityConfig;
+import cn.vastsky.lib.base.common.base.CommonBaseActivity;
+import cn.vastsky.lib.reten.ActivityConfig;
 import cn.vastsky.onlineshop.installment.R;
 
 @ActivityConfig(isHasTitleView = false)

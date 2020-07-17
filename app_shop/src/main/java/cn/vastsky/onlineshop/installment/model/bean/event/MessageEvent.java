@@ -1,6 +1,6 @@
 package cn.vastsky.onlineshop.installment.model.bean.event;
 
-import cn.vastsky.libs.common.base.bean.BaseBean;
+import cn.vastsky.lib.base.common.base.bean.BaseBean;
 
 /**
  * @author: kezy

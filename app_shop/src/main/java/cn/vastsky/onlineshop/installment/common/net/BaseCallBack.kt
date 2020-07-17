@@ -1,9 +1,9 @@
 package cn.vastsky.onlineshop.installment.common.net
 
 import android.text.TextUtils
-import cn.vastsky.lib.base.config.AppConfigLib
-import cn.vastsky.lib.base.utils.LogUtils
-import cn.vastsky.libs.common.config.userinfo.LoginFacade
+import cn.vastsky.lib.base.common.config.AppConfigLib
+import cn.vastsky.lib.utils.LogUtils
+import cn.vastsky.lib.base.common.config.userinfo.LoginFacade
 import cn.vastsky.onlineshop.installment.model.bean.base.BaseResponse
 import retrofit2.Call
 import retrofit2.Callback

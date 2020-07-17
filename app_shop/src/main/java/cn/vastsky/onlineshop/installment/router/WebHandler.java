@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 
-import cn.vastsky.libs.common.router.PageRouter;
+import cn.vastsky.lib.router.PageRouter;
 import cn.vastsky.onlineshop.installment.base.web.VsWebviewActivity;
 
 

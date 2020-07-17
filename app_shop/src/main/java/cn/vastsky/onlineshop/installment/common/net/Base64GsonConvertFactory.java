@@ -9,7 +9,7 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
 import java.nio.charset.Charset;
 
-import cn.vastsky.lib.base.utils.LogUtils;
+import cn.vastsky.lib.utils.LogUtils;
 import cn.vastsky.onlineshop.installment.model.bean.base.BaseRequest;
 import okhttp3.MediaType;
 import okhttp3.RequestBody;

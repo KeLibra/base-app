@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">便利分期</string>
+    <string name="app_name">app-base-template</string>
 
     <!-- 身份证认证 -->
     <string name="idcard_hint">身份证完整, 身份证号清晰</string>

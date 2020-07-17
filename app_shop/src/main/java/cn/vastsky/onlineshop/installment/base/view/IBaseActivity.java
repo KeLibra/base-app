@@ -12,12 +12,12 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import cn.vastsky.lib.base.utils.LogUtils;
-import cn.vastsky.lib.base.utils.ToastUtil;
-import cn.vastsky.libs.common.base.CommonBaseActivity;
-import cn.vastsky.libs.common.reten.ActivityConfig;
-import cn.vastsky.libs.common.utils.PermissionUtils;
-import cn.vastsky.libs.common.view.base.DefaultTitleView;
+import cn.vastsky.lib.utils.LogUtils;
+import cn.vastsky.lib.utils.ToastUtil;
+import cn.vastsky.lib.base.common.base.CommonBaseActivity;
+import cn.vastsky.lib.reten.ActivityConfig;
+import cn.vastsky.lib.utils.PermissionUtils;
+import cn.vastsky.lib.base.common.view.defaultview.DefaultTitleView;
 import cn.vastsky.onlineshop.installment.base.impl.IBasePresenter;
 import cn.vastsky.onlineshop.installment.base.impl.IBaseView;
 

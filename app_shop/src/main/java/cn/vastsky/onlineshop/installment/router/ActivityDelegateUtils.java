@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import androidx.fragment.app.FragmentActivity;
-import cn.vastsky.lib.base.utils.LogUtils;
+import cn.vastsky.lib.utils.LogUtils;
 import cn.vastsky.onlineshop.installment.common.delegate.ActivityGroupDelegate;
 
 /**

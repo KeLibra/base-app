@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import cn.vastsky.libs.common.utils.ImageLoadUtils;
+import cn.vastsky.lib.utils.ImageLoadUtils;
 import cn.vastsky.onlineshop.installment.R;
 
 

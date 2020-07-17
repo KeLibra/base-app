@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
-import cn.vastsky.lib.base.utils.LogUtils;
+import cn.vastsky.lib.utils.LogUtils;
 
 
 /**
