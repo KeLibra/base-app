@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x112"
+        android:background="@color/white">
+
+
+        <ImageView
+            android:id="@+id/iv_item_icon"
+            android:layout_width="@dimen/x52"
+            android:layout_height="@dimen/x52"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x28" />
+
+        <TextView
+            android:id="@+id/tv_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x20"
+            android:layout_toRightOf="@id/iv_item_icon"
+            android:lines="1"
+            android:textColor="@color/color_333333"
+            android:textSize="14sp"
+            tools:text="贷款条件" />
+
+        <TextView
+            android:id="@+id/tv_item_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x56"
+            android:lines="1"
+            android:textSize="14sp"
+            tools:text="已完成" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x1"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="@dimen/x28"
+            android:background="@color/color_e6eef8" />
+    </RelativeLayout>
+</RelativeLayout>

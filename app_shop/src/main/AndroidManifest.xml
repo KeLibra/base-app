@@ -55,49 +55,8 @@
                 <data android:scheme="vs" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.activity.MinePageActivity" />
-        <activity android:name=".view.activity.VerifyCodeActivity" />
-        <activity
-            android:name=".view.activity.LoginActivity"
-            android:launchMode="singleTask" />
-        <activity android:name=".view.activity.LoanDetailActivity" />
-        <activity android:name=".view.activity.PayResultPageActivity" />
-        <activity
-            android:name=".view.activity.SplashActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/SplashPageTheme"
-            android:windowSoftInputMode="adjustPan|stateHidden">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="vs" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".view.activity.LoanIdCardCertActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity
-            android:name=".view.activity.TestActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden"
-            android:launchMode="singleTop"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".view.activity.HomepageActivity"
-            android:configChanges="orientation|screenSize" />
-        <activity
-            android:name=".base.web.VsWebviewActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
-        <activity android:name=".view.activity.PaymentPageActivity" />
         <activity
             android:name="com.alipay.sdk.app.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
@@ -125,7 +84,7 @@
 
         <service android:name="com.amap.api.location.APSService" />
 
-        <receiver android:name=".common.utils.download.UpdataBroadcastReceiver">
+        <receiver android:name="test.kezy.com.lib_commom.utils.download.UpdataBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
                 <!-- <action android:name="android.intent.action.PACKAGE_INSTALL" /> -->
@@ -133,7 +92,7 @@
         </receiver>
 
         <service
-            android:name=".common.utils.download.DownloadService"
+            android:name="test.kezy.com.lib_commom.utils.download.DownloadService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.example.android.threadsample.BROADCAST" />

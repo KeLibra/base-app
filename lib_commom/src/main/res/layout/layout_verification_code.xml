@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/et_verification_code_input"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:alpha="0"
+        android:background="@android:color/transparent"
+        android:focusable="true"
+        android:inputType="number"
+        android:maxLength="4" />
+
+    <LinearLayout
+        android:id="@+id/ll_verification_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_code1"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/x120"
+            android:background="@drawable/underline_yellow_bg"
+            android:gravity="center"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/x60"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_code2"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/x120"
+            android:layout_marginLeft="@dimen/x20"
+            android:background="@drawable/underline_grey_bg"
+            android:gravity="center"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/x60"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_code3"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/x120"
+            android:layout_marginLeft="@dimen/x20"
+            android:background="@drawable/underline_grey_bg"
+            android:gravity="center"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/x60"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tv_code4"
+            android:layout_width="@dimen/x120"
+            android:layout_height="@dimen/x120"
+            android:layout_marginLeft="@dimen/x20"
+            android:background="@drawable/underline_grey_bg"
+            android:gravity="center"
+            android:textColor="@color/color_333333"
+            android:textSize="@dimen/x60"
+            android:visibility="visible" />
+
+    </LinearLayout>
+
+</RelativeLayout>

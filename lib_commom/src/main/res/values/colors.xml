@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2CA5FF</color>
+    <color name="colorPrimaryDark">#FF268EF6</color>
+    <color name="colorAccent">#2CA5FF</color>
+
+
+    <!-- 通用颜色 -->
+    <color name="color_268ef6">#FF268EF6</color>
+    <color name="color_311900">#FF311900</color>
+    <color name="color_107fef">#FF107FEF</color>
+
+    <color name="fm_colorAccent">#248aef</color>
+    <color name="color_f6faff">#F6FAFF</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_global_bg">#f8f8f8</color>
+    <color name="color_fafafa">#fafafa</color>
+    <color name="color_2CA5FF">#2CA5FF</color>
+
+    <color name="color_white">#ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="color_black">#000000</color>
+    <color name="color_222222">#222222</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_444444">#444444</color>
+    <color name="color_e8e8e8">#E8E8E8</color>
+    <color name="color_e6eef8">#E6EEF8</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_b2b2b2">#B2B2B2</color>
+    <color name="color_c1c1c1">#c1c1c1</color>
+
+    <color name="color_cc248aef">#cc248aef</color>
+    <color name="color_248aef">#248aef</color>
+    <color name="color_ffe19a">#FFE19A</color>
+    <color name="color_69aeff">#1a69aeff</color>
+    <color name="color_3c99ff">#3C99FF</color>
+    <color name="color_ff6f24">#FF6F24</color>
+    <color name="color_24a1ff">#24A1FF</color>
+
+    <color name="color_2e91ff">#2E91FF</color>
+    <color name="color_25d7eb">#25D7EB</color>
+
+    <color name="color_1073ff">#1073FF</color>
+    <color name="color_25acff">#25ACFF</color>
+    <color name="color_fff4ef">#FFF4EF</color>
+    <color name="color_9b9b9b">#FF9B9B9B</color>
+    <color name="color_29baf4">#FF29BAF4</color>
+    <color name="color_5db7ff">#FF5DB7FF</color>
+
+
+</resources>

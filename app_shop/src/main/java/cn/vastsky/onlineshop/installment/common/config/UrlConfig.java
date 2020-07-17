@@ -1,6 +1,6 @@
 package cn.vastsky.onlineshop.installment.common.config;
 
-import cn.vastsky.onlineshop.installment.common.VsConstants;
+import test.kezy.com.lib_commom.VsConstants;
 
 /**
  * @author: kezy
