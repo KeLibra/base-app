@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bm_dialog_bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bg_homepager_item"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_dialog_title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/x104"
+                android:gravity="center"
+                android:text="还款计划"
+                android:textColor="@color/color_222222"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/iv_dialog_close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_margin="@dimen/x4"
+                android:padding="@dimen/x18"
+                android:src="@drawable/icon_btn_close" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_dialog_tips"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x60"
+            android:background="@color/color_fff4ef">
+
+            <ImageView
+                android:layout_width="@dimen/x32"
+                android:layout_height="@dimen/x32"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x24"
+                android:background="@drawable/icon_loan_detail_warming" />
+
+            <TextView
+                android:id="@+id/tv_dialog_tips"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/x72"
+                android:text="1期约7天，以下仅为试算，实际还款以分期合同为准"
+                android:textColor="@color/color_ff6f24"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x104"
+            android:layout_below="@+id/rl_dialog_tips"
+            android:orientation="horizontal"
+            android:paddingTop="@dimen/x48">
+
+            <TextView
+                android:layout_width="@dimen/x110"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x32"
+                android:gravity="center"
+                android:text="期数"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="@dimen/x110"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x76"
+                android:gravity="center"
+                android:text="需还"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="@dimen/x110"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x76"
+                android:gravity="center"
+                android:text="本金"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="@dimen/x110"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/x76"
+                android:gravity="center"
+                android:text="利息"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x1"
+            android:layout_marginLeft="@dimen/x28"
+            android:background="@color/color_e6eef8" />
+
+        <cn.vastsky.libs.common.weight.MaxHeightRecyclerView
+            android:id="@+id/rv_dialog_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:maxHeight="@dimen/x400" />
+
+        <TextView
+            android:id="@+id/tv_dialog_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rv_dialog_list"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/x35"
+            android:layout_marginRight="@dimen/x60"
+            android:layout_marginBottom="@dimen/x72"
+            android:text="总计需还 20000.00"
+            android:textColor="@color/color_333333"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</RelativeLayout>

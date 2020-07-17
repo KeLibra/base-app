@@ -1,8 +1,12 @@
+include ':shop'
 include ':lib_commom'
-include ':app_shop', ':lib_comlibs', ':lib_ocr', ':lib_gdlocation', ':lib_base', ':lib_paymodule'
+include ':app', ':lib_comlibs', ':lib_ocr', ':lib_gdlocation', ':lib_base', ':lib_paymodule'
 rootProject.name='base-app-template'
 
+// 业务库
+project(':shop').projectDir = new File('funcModule/shop')  // 业务库
 
+// lib 库
 project(':lib_base').projectDir = new File('libModule/lib_base')  // 最下层基础库
 project(':lib_comlibs').projectDir = new File('libModule/lib_comlibs') // 业务基础库
 project(':lib_gdlocation').projectDir = new File('libModule/lib_gdlocation') // 高德lib库

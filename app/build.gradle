@@ -1,0 +1,89 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'packer'
+
+android {
+
+    signingConfigs {
+        newConfig {
+            storeFile file("key/bjxy_key.jks")
+            storePassword "bjxy123"
+            keyAlias "bjxy"
+            keyPassword "bjxy123"
+        }
+    }
+
+    compileSdkVersion rootProject.ext.versions.compileSdkVersion
+    buildToolsVersion rootProject.ext.versions.buildToolsVersion
+
+    defaultConfig {
+        versionCode rootProject.ext.appinfos.versionCode
+        versionName rootProject.ext.appinfos.versionName
+        flavorDimensions rootProject.ext.appinfos.versionName
+        multiDexEnabled true
+
+        minSdkVersion rootProject.ext.versions.minSdkVersion
+        targetSdkVersion rootProject.ext.versions.targetSdkVersion
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.newConfig
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packer {
+        archiveNameFormat = '${buildType}_${flavor}_${versionName}_${channel}'
+        archiveOutput = new File(project.rootProject.buildDir, "apks")
+        channelMap = [
+                "blfq": project.rootProject.file("app_shop/channel_flavor.txt"),
+        ]
+    }
+
+    productFlavors {
+        // 便利分期
+        blfq {
+            applicationId = "cn.vastsky.onlineshop.installment"
+            manifestPlaceholders = [
+                    SOURCE   : 1,
+                    // 高德地图 key
+                    GDMAP_KEY: "a5991254a83373fca82fd2eaaae887e8",
+            ]
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+
+    implementation project(':shop')
+
+
+    implementation rootProject.ext.libs.multidex
+
+    implementation rootProject.ext.libs.packger_ng // 打包插件
+
+}
+
+repositories {
+    mavenCentral()
+}
