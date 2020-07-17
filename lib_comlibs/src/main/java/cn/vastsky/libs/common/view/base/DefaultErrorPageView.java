@@ -1,6 +1,7 @@
 package cn.vastsky.libs.common.view.base;
 
 import android.content.Context;
+import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.ImageView;
@@ -68,6 +69,13 @@ public class DefaultErrorPageView extends LinearLayout implements
     public void retry() {
         if (mOnRefreshBtnClickListener != null) {
             mOnRefreshBtnClickListener.onRefreshBtnClick();
+        }
+    }
+
+    @Override
+    public void showErrorMsg(int errCode, String errMsg) {
+        if (!TextUtils.isEmpty(errMsg)) {
+            mMainTipsTv.setText(errMsg);
         }
     }
 

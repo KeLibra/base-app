@@ -5,10 +5,7 @@ import android.text.TextUtils;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 
-import com.google.gson.Gson;
-
 import cn.vastsky.lib.base.utils.LogUtils;
-import cn.vastsky.onlineshop.installment.model.bean.WebDeviceInfo;
 
 
 /**
@@ -48,24 +45,5 @@ public class VsWebChromeClient extends WebChromeClient {
             listener.onProgressChanged(newProgress);
         }
         LogUtils.i("=====msg_webview", "onProgressChanged   url: " + webView.getUrl());
-
-        if (webView != null) {
-            loadDeviceInfo(webView);
-        }
-    }
-
-    private void loadDeviceInfo(WebView webView) {
-        try {
-
-            WebDeviceInfo info = new WebDeviceInfo();
-            Gson gson = new Gson();
-            String deviceInfo = gson.toJson(info);
-
-            webView.loadUrl("javascript:if(window.NMBridge && typeof window.NMBridge.deviceInfo==='undefined'){window.NMBridge.deviceInfo=" + deviceInfo + "}");
-
-            LogUtils.d("====msg_web", "nm bridge: " + deviceInfo);
-        } catch (Exception e) {
-            LogUtils.e("==msg_web_load_err", e.getMessage());
-        }
     }
 }

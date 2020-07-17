@@ -1,18 +1,14 @@
 package cn.vastsky.onlineshop.installment.router.impl;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 
 import androidx.fragment.app.FragmentActivity;
 import cn.vastsky.lib.base.store.SharedPrefStore;
-import cn.vastsky.lib.base.utils.LogUtils;
-import cn.vastsky.libs.common.base.LibConstants;
+import cn.vastsky.lib.base.utils.ToastUtil;
 import cn.vastsky.libs.common.config.userinfo.LoginFacade;
 import cn.vastsky.libs.common.config.userinfo.LoginImpl;
 import cn.vastsky.onlineshop.installment.model.UserInfo;
-import cn.vastsky.onlineshop.installment.view.activity.LoginActivity;
 
 
 /**
@@ -72,15 +68,7 @@ public class VsLoginImpl extends LoginImpl {
         if (!(context instanceof FragmentActivity)) {
             return false;
         } else {
-            Intent intent = new Intent(context, LoginActivity.class);
-            if (bundle != null) {
-                intent.putExtras(bundle);
-                LogUtils.d("-------------- goLoginView ------- " + bundle.getString(LibConstants.Key.KEY_LOGIN_SUCC_CALLBACK_URL));
-                if (!TextUtils.isEmpty(bundle.getString(LibConstants.Key.KEY_LOGIN_SUCC_CALLBACK_URL))) {
-                    intent.putExtra(LibConstants.Key.KEY_LOGIN_SUCC_CALLBACK_URL, bundle.getString(LibConstants.Key.KEY_LOGIN_SUCC_CALLBACK_URL));
-                }
-            }
-            context.startActivity(intent);
+            ToastUtil.show("登录操作");
 
             return true;
         }

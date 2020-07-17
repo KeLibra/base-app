@@ -77,8 +77,7 @@ dependencies {
 
     implementation project(':lib_commom')
 
-    implementation(rootProject.ext.libs.butterknife)
-    annotationProcessor rootProject.ext.libs.butterknife_compiler
+
     implementation rootProject.ext.libs.multidex
 
     implementation rootProject.ext.libs.packger_ng // 打包插件

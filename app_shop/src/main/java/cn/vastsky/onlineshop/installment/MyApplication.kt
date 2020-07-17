@@ -11,7 +11,6 @@ import cn.vastsky.libs.gdlocation.config.LocationConfig
 import cn.vastsky.libs.gdlocation.manager.LocationManager
 import cn.vastsky.onlineshop.installment.common.VsConstants
 import cn.vastsky.onlineshop.installment.common.config.UrlConfig
-import cn.vastsky.onlineshop.installment.router.PagerHandler
 import cn.vastsky.onlineshop.installment.router.WebHandler
 import cn.vastsky.onlineshop.installment.router.impl.VsLoginImpl
 import com.mcxiaoke.packer.helper.PackerNg
@@ -51,7 +50,6 @@ class MyApplication : MultiDexApplication() {
     private fun initPageRouter() {
 
         PageRouter.register(WebHandler())
-        PageRouter.register(PagerHandler())
     }
 
     private fun initNetWorkEnv() {

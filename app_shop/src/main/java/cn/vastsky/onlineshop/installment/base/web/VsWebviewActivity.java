@@ -16,12 +16,13 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import cn.vastsky.lib.base.utils.LogUtils;
+import cn.vastsky.libs.common.reten.ActivityConfig;
 import cn.vastsky.libs.common.utils.AppInfoUtils;
 import cn.vastsky.onlineshop.installment.R;
 import cn.vastsky.onlineshop.installment.base.view.SimpleBaseActivity;
 import cn.vastsky.onlineshop.installment.model.bean.event.MessageEvent;
 
-
+@ActivityConfig(isHasErrorPageView = true)
 public class VsWebviewActivity extends SimpleBaseActivity {
 
     public String getH5_url() {
@@ -101,7 +102,7 @@ public class VsWebviewActivity extends SimpleBaseActivity {
     }
 
     @Override
-    protected boolean hasTitle() {
+    protected boolean isHasTitleView() {
         return !"NoTitle".equals(params);
     }
 
@@ -149,7 +150,7 @@ public class VsWebviewActivity extends SimpleBaseActivity {
     private VsWebChromeClient.onTitleChangedListener listener = new VsWebChromeClient.onTitleChangedListener() {
         @Override
         public void onTitleChanged(String title) {
-            if (hasTitle() && mTitleView != null) {
+            if (isHasTitleView() && mTitleView != null) {
                 mTitleView.getTextView().setText(title);
             }
         }
@@ -332,8 +333,7 @@ public class VsWebviewActivity extends SimpleBaseActivity {
         }
     }
 
-    @Override
-    protected boolean hasErrorPage() {
+    private boolean hasErrorPage() {
         return true;
     }
 

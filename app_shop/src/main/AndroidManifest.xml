@@ -18,8 +18,7 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
-
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
 
     <application
         android:name=".MyApplication"
@@ -30,15 +29,39 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:replace="allowBackup, theme, label, icon, supportsRtl, name">
-        <activity android:name=".view.activity.MinePageActivity"></activity>
+        <activity
+            android:name=".view.activity.MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name=".view.activity.MainActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+
+                <!-- 必须加否否无法响应点击链接的 Intent -->
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="vs" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".view.activity.MinePageActivity" />
         <activity android:name=".view.activity.VerifyCodeActivity" />
         <activity
             android:name=".view.activity.LoginActivity"
             android:launchMode="singleTask" />
-
         <activity android:name=".view.activity.LoanDetailActivity" />
         <activity android:name=".view.activity.PayResultPageActivity" />
-
         <activity
             android:name=".view.activity.SplashActivity"
             android:screenOrientation="portrait"
@@ -50,27 +73,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <data android:scheme="vs" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".view.activity.MainActivity"
-            android:launchMode="singleTask"
-            android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustPan|stateHidden">
-            <intent-filter>
-                <action android:name=".view.activity.MainActivity" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <intent-filter>
-
-                <!-- 必须加否否无法响应点击链接的 Intent -->
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -100,30 +102,21 @@
             android:name="com.alipay.sdk.app.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
-            android:screenOrientation="behind" />
-
-        <!--        &lt;!&ndash; 微信支付回调 &ndash;&gt;-->
-        <!--        <activity-->
-        <!--            android:name=".wxapi.WXPayEntryActivity"-->
-        <!--            android:exported="true"-->
-        <!--            android:launchMode="singleTop">-->
-        <!--            <intent-filter>-->
-        <!--                <action android:name="android.intent.action.VIEW" />-->
-
-        <!--                <category android:name="android.intent.category.DEFAULT" />-->
-
-        <!--                <data android:scheme="wxfc56b40e4049b17e" />-->
-        <!--            </intent-filter>-->
-        <!--        </activity>-->
-
-
+            android:screenOrientation="behind" /> <!-- &lt;!&ndash; 微信支付回调 &ndash;&gt; -->
+        <!-- <activity -->
+        <!-- android:name=".wxapi.WXPayEntryActivity" -->
+        <!-- android:exported="true" -->
+        <!-- android:launchMode="singleTop"> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.VIEW" /> -->
+        <!-- <category android:name="android.intent.category.DEFAULT" /> -->
+        <!-- <data android:scheme="wxfc56b40e4049b17e" /> -->
+        <!-- </intent-filter> -->
+        <!-- </activity> -->
         <!-- 全面屏适配 -->
         <meta-data
             android:name="android.max_aspect"
-            android:value="2.1" />
-
-
-        <!-- 第三方key -->
+            android:value="2.1" /> <!-- 第三方key -->
         <!-- 高德地图 -->
         <meta-data
             android:name="com.amap.api.v2.apikey"
@@ -135,10 +128,9 @@
         <receiver android:name=".common.utils.download.UpdataBroadcastReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.DOWNLOAD_COMPLETE" />
-                <!--<action android:name="android.intent.action.PACKAGE_INSTALL" />-->
+                <!-- <action android:name="android.intent.action.PACKAGE_INSTALL" /> -->
             </intent-filter>
         </receiver>
-
 
         <service
             android:name=".common.utils.download.DownloadService"
@@ -146,9 +138,7 @@
             <intent-filter>
                 <action android:name="com.example.android.threadsample.BROADCAST" />
             </intent-filter>
-        </service>
-
-        <!-- Android 7.0 文件访问 -->
+        </service> <!-- Android 7.0 文件访问 -->
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="cn.vastsky.onlineshop.installment.provider"

@@ -2,6 +2,7 @@ package cn.vastsky.onlineshop.installment.base.view;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 
@@ -14,6 +15,7 @@ import butterknife.Unbinder;
 import cn.vastsky.lib.base.utils.LogUtils;
 import cn.vastsky.lib.base.utils.ToastUtil;
 import cn.vastsky.libs.common.base.CommonBaseActivity;
+import cn.vastsky.libs.common.reten.ActivityConfig;
 import cn.vastsky.libs.common.utils.PermissionUtils;
 import cn.vastsky.libs.common.view.base.DefaultTitleView;
 import cn.vastsky.onlineshop.installment.base.impl.IBasePresenter;
@@ -28,6 +30,7 @@ import static android.view.View.OnClickListener;
  * @param <P> 对应的presenter接口
  * @author dingzhongsheng
  */
+@ActivityConfig(isHasTitleView = true)
 public abstract class IBaseActivity<P extends IBasePresenter> extends CommonBaseActivity implements IBaseView {
     protected P presenter;
     private boolean isForeground;
@@ -35,8 +38,8 @@ public abstract class IBaseActivity<P extends IBasePresenter> extends CommonBase
     private Unbinder unbinder;
 
     @Override
-    protected void initContentView() {
-        super.initContentView();
+    protected void initContentView(Bundle savedInstanceState) {
+        super.initContentView(savedInstanceState);
         unbinder = ButterKnife.bind(this);
         presenter = getPresenter();
         initView();
@@ -49,10 +52,6 @@ public abstract class IBaseActivity<P extends IBasePresenter> extends CommonBase
         loadData();
     }
 
-    @Override
-    protected boolean hasTitle() {
-        return true;
-    }
 
     protected boolean hasBack() {
         return true;
@@ -81,9 +80,9 @@ public abstract class IBaseActivity<P extends IBasePresenter> extends CommonBase
     }
 
     @Override
-    protected void initHeaderView() {
-        super.initHeaderView();
-        if (fmTitleView != null && hasTitle()) {
+    protected void initTitleView() {
+        super.initTitleView();
+        if (fmTitleView != null ) {
             if (!hasBack()) {
                 fmTitleView.setImageBackShow(false);
             }
@@ -94,7 +93,7 @@ public abstract class IBaseActivity<P extends IBasePresenter> extends CommonBase
     }
 
     protected void setTitle(String title) {
-        if (fmTitleView != null && hasTitle() && !TextUtils.isEmpty(title)) {
+        if (fmTitleView != null  && !TextUtils.isEmpty(title)) {
             fmTitleView.setTitle(title);
         }
     }
@@ -261,7 +260,7 @@ public abstract class IBaseActivity<P extends IBasePresenter> extends CommonBase
     @Override
     public void showEmptyPage(int errorCode) {
         if (errorCode == -1) {
-            showErrorPage(errorCode);
+            showErrorPage(errorCode, "");
         }
     }
 

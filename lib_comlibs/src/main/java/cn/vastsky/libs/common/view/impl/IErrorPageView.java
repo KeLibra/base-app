@@ -22,4 +22,6 @@ public interface IErrorPageView {
     void report();
 
     void retry();
+
+    void showErrorMsg(int errCode, String errMsg);
 }

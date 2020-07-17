@@ -15,18 +15,12 @@ import org.json.JSONObject;
 
 import cn.vastsky.lib.base.config.AppConfigLib;
 import cn.vastsky.lib.base.store.Store;
-import cn.vastsky.lib.base.utils.JsonUtils;
 import cn.vastsky.lib.base.utils.LogUtils;
 import cn.vastsky.lib.base.utils.ToastUtil;
 import cn.vastsky.libs.common.config.userinfo.LoginFacade;
 import cn.vastsky.libs.common.router.PageRouter;
 import cn.vastsky.onlineshop.installment.common.net.util.MD5;
-import cn.vastsky.onlineshop.installment.common.utils.download.AppUpLoadUtils;
-import cn.vastsky.onlineshop.installment.model.bean.WebDeviceInfo;
 import cn.vastsky.onlineshop.installment.model.bean.base.BaseRequest;
-import cn.vastsky.onlineshop.installment.model.bean.response.CertifyTpyeResponse;
-import cn.vastsky.onlineshop.installment.router.CertRouterUtils;
-import cn.vastsky.onlineshop.installment.view.activity.PaymentPageActivity;
 
 /**
  * Created by airal on 2018/9/17.
@@ -109,30 +103,6 @@ public class JavaInterface {
     }
 
 
-    /**
-     * 异步上报
-     * {
-     * "platform":"ios", //ios 或 android
-     * "deviceId":"",//设备号
-     * }
-     */
-    @JavascriptInterface
-    public void getDeviceInfo(String param) {
-        LogUtils.d("---------- getDeviceInfo ---------- " + param);
-        try {
-
-            JSONObject jsonObject = new JSONObject(param);
-            String callBackName = jsonObject.get("callback").toString();
-
-            WebDeviceInfo info = new WebDeviceInfo();
-            String deviceInfoStr = gson.toJson(info);
-            LogUtils.d("---------- getDeviceInfo ------ callBackName ---- " + "javascript:if(window." + callBackName + "){window." + callBackName + "('" + deviceInfoStr + "')};");
-            activity.loadJsCallback("javascript:if(window." + callBackName + "){window." + callBackName + "('" + deviceInfoStr + "')};");
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
 
     /**
      * 回退，如页面无法回退，关闭webview
@@ -203,24 +173,6 @@ public class JavaInterface {
         }
     }
 
-    /**
-     * 支付（跳转收银台，回调callback）
-     */
-    @JavascriptInterface
-    public void pay(String param) {
-        LogUtils.d("---------- pay ---------- " + param);
-        try {
-            JSONObject object = new JSONObject(param);
-            String orderSn = object.optString("orderSn");
-
-            Intent intent = new Intent(activity, PaymentPageActivity.class);
-            intent.putExtra("order_sn", orderSn);
-            activity.startActivity(intent);
-            LogUtils.d("---------- pay ----- orderSn ----- " + orderSn);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
 
     /**
      * 获取缓存 (该缓存APP与H5共用)
@@ -388,35 +340,6 @@ public class JavaInterface {
     }
 
 
-    /**
-     * 基本信息认证完成，获取下一步跳转数据，直接传给app，后续流程app处理
-     * {"info": {} // 接口返回的data字段}
-     */
-    @JavascriptInterface
-    public void finishBasicAuth(String param) {
-
-        LogUtils.d("----------  finishBasicAuth  ---------- " + param);
-
-        JSONObject object = null;
-        try {
-            object = new JSONObject(param);
-            String info = object.optString("info");
-
-            CertifyTpyeResponse response = JsonUtils.jsonStr2JsonObj(info, CertifyTpyeResponse.class);
-            LogUtils.e("--------- response: " + (new Gson()).toJson(response).toString());
-            if (response != null) {
-                if (response.webCertify) {
-                    CertRouterUtils.goH5Cert(activity, response);
-                } else if (response.certifyType == 2) {
-                    CertRouterUtils.goIdCardCert(activity, response.instProductId, response.orderSn);
-                }
-            }
-            activity.finish();
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-    }
-
 
     /**
      * 跳应用市场的方法
@@ -440,12 +363,6 @@ public class JavaInterface {
      */
     @JavascriptInterface
     public void detectUpdate(String param) {
-        LogUtils.d("----------  appUpload  ---------- " + param);
-        try {
-            AppUpLoadUtils.appUpLoad(activity, true);
-        } catch (Exception e) {
-            ToastUtil.show("已经是最新版本了");
-            e.printStackTrace();
-        }
+
     }
 }
