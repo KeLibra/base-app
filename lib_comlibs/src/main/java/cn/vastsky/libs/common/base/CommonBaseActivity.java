@@ -216,7 +216,6 @@ public abstract class CommonBaseActivity extends FragmentActivity {
     }
 
 
-
     protected ILoadingDialog mLoadingDialog;
 
     public void initProgressDialog() {
@@ -392,8 +391,10 @@ public abstract class CommonBaseActivity extends FragmentActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
             LogUtils.d("-------------------------onKeyDown       + commonBase ");
-            onBack();
-            return true;
+            if (isHasTitleView() && onTitleBack()) {
+                onBack();
+                return true;
+            }
         }
         return super.onKeyDown(keyCode, event);
     }

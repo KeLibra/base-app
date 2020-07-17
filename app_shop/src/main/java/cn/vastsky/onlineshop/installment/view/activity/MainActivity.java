@@ -1,15 +1,14 @@
 package cn.vastsky.onlineshop.installment.view.activity;
 
-import android.os.Bundle;
-
-import androidx.appcompat.app.AppCompatActivity;
+import cn.vastsky.libs.common.base.CommonBaseActivity;
+import cn.vastsky.libs.common.reten.ActivityConfig;
 import cn.vastsky.onlineshop.installment.R;
 
-public class MainActivity extends AppCompatActivity {
+@ActivityConfig(isHasTitleView = false)
+public class MainActivity extends CommonBaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+    protected int getContentLayout() {
+        return R.layout.activity_main2;
     }
 }
