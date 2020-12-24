@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+
+
+    <declare-styleable name="AlternativeCornerRelativeLayout" tools:ignore="ResourceName">
+        <attr name="alter_left_top_corner_radius" format="dimension" />
+        <attr name="alter_right_top_corner_radius" format="dimension" />
+        <attr name="alter_left_bottom_corner_radius" format="dimension" />
+        <attr name="alter_right_bottom_corner_radius" format="dimension" />
+    </declare-styleable>
+    <declare-styleable name="CornerRelativeLayout"></declare-styleable>
+
+    <declare-styleable name="FlexibleRoundImageView">
+        <attr name="flexible_round_corner_radius" format="dimension" />
+        <attr name="flexible_round_corner">
+            <flag name="left_top" value="1"/>
+            <flag name="right_top" value="2"/>
+            <flag name="left_bottom" value="4"/>
+            <flag name="right_bottom" value="8"/>
+            <flag name="all" value="15"/>
+        </attr>
+        <attr name="is_square" format="boolean"/>
+        <attr name="ratio" format="float"/>
+        <attr name="keep_scale_by_height" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="corner_radius" format="dimension" />
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="border_bg_color" format="color" />
+        <attr name="round_background" format="boolean" />
+        <attr name="android:scaleType" />
+        <attr name="pressdown_shade" format="boolean" />
+    </declare-styleable>
+
+</resources>
